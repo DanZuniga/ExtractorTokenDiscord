@@ -26,7 +26,7 @@ namespace DiscordToken
                 textBox1.UseSystemPasswordChar = true;
             }
         }
-        #region Drag now
+        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -38,12 +38,10 @@ namespace DiscordToken
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        #endregion
+        
 
         private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
         {
-            //pictureBox3.Image = global::DiscordToken.Properties.Resources.hide;
-            
             if (textBox1.UseSystemPasswordChar == false)
             {
                 pictureBox3.Image = Properties.Resources.show;
@@ -52,7 +50,6 @@ namespace DiscordToken
         }
         private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
-            //pictureBox3.Image = global::DiscordToken.Properties.Resources.hide;
             if (textBox1.UseSystemPasswordChar == true)
             {
                 pictureBox3.Image = Properties.Resources.hide;
